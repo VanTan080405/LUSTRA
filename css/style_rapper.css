@@ -1,0 +1,358 @@
+/* NỀN VÀ MÀU CHỮ TOÀN TRANG */
+body {
+  background: #000000;
+  color: #f0f0f0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+/* THANH NAVBAR */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 40px;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+  height: 40px;
+  margin-right: auto;
+}
+
+.navbar nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #f0f0f0;
+  transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+  color: #9b59b6;
+}
+
+.dark-mode-btn {
+  color: #ffffff;
+  margin-left: 20px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.dark-mode-btn:hover {
+  transform: scale(1.2);
+}
+
+/* BANNER */
+.banner {
+  margin-top: 60px;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.banner-img.clear-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../images/images_rapper/vantan.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: -1;
+}
+.banner-text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.banner-text.show {
+  opacity: 1;
+  transform: translate(-50%, -40%);
+}
+.banner-text h1 {
+  font-size: 48px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  letter-spacing: 1px;
+}
+
+/* BỐ CỤC CHUNG */
+.container {
+  display: flex;
+  padding: 40px;
+  gap: 30px;
+}
+.left-column {
+  flex: 1;
+}
+.right-column {
+  flex: 2;
+}
+.avatar {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.4s ease;
+}
+.avatar:hover {
+  transform: scale(1.02);
+}
+
+/* INFO-BOX */
+.info-box {
+  border-radius: 20px;
+  padding: 25px;
+  background: linear-gradient(135deg, #2a2a2a, #3a3a3a);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.08);
+  margin-bottom: 30px;
+  transition: all 0.4s ease;
+}
+.info-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(187, 134, 252, 0.5);
+  background: linear-gradient(135deg, #444, #666);
+}
+
+/* CHỮ */
+.info-box h2,
+.info-box p,
+.info-box li,
+.info-box strong {
+  color: #f8f8f8;
+}
+.left-column h2,
+.right-column h2 {
+  color: #bb86fc;
+}
+
+/* TIMELINE */
+.timeline-header {
+  background: linear-gradient(270deg, #ff4b1f, #1fddff, #28a745, #ff4b1f);
+  background-size: 400% 400%;
+  animation: rainbowMove 20s linear infinite;
+  color: #fff;
+  padding: 12px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  border-left: 5px solid #6c5ce7;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.timeline-detail {
+  display: none;
+  background: #1e1e1e;
+  border: 1px solid #444;
+  padding: 10px;
+  position: relative;
+}
+.timeline-detail img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+.timeline-detail .close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  color: #999;
+  cursor: pointer;
+}
+.timeline-detail .close-btn:hover {
+  color: #e74c3c;
+}
+
+/* BACK TO TOP */
+#back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #bb86fc;
+  color: white;
+  border: none;
+  padding: 12px 15px;
+  font-size: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 999;
+}
+#back-to-top:hover {
+  background: #8e44ad;
+}
+
+/* SOCIAL ICON */
+.social-icons a {
+  margin-right: 12px;
+  font-size: 32px; /* ← tăng từ 24px lên 32px */
+  color: #ffffff;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+  color: #bb86fc;
+  transform: scale(1.2);
+}
+
+/* CHUYỂN MÀU */
+@keyframes rainbowMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.main-content {
+  background: rgba(0, 0, 0, 0.85); /* Đen rất đậm nhưng không đặc hoàn toàn */
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+}
+.hobby-section {
+  margin-top: 40px;
+}
+.personal-photos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}
+.personal-photos img {
+  width: 48%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+.personal-photos img:hover {
+  transform: scale(1.05);
+}
+.skill-badges i {
+  margin-right: 8px;
+}
+.skill-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.skill-badges span {
+  padding: 10px 16px;
+  background: #4a4949;
+  border-radius: 30px;
+  font-size: 14px;
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  cursor: default;
+}
+
+.skill-badges span:hover {
+  background: #444;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(187, 134, 252, 0.6);
+}
+.info-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.info-badges span {
+  background: #4a4949; /* xám đậm hơn */
+  padding: 12px 16px;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.05);
+}
+
+.info-badges span:hover {
+  background: #2e2e2e;
+  transform: scale(1.03);
+  box-shadow: 0 0 10px rgba(187, 134, 252, 0.3);
+}
+.career-goal-wrapper {
+  margin-bottom: 40px;
+  padding: 20px;
+  background: rgba(50, 50, 50, 0.8);
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.06);
+}
+
+.career-goal-wrapper h2 {
+  color: #bb86fc;
+  margin-bottom: 30px;
+}
+
+.career-timeline {
+  position: relative;
+  padding-left: 30px;
+  border-left: 3px solid #4caf50;
+}
+
+.career-item {
+  position: relative;
+  margin-bottom: 30px;
+  padding-left: 20px;
+}
+
+.career-item .dot {
+  position: absolute;
+  left: -13px;
+  top: 5px;
+  width: 14px;
+  height: 14px;
+  background-color: #e1ed62;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.career-item .content {
+  background: #2c2c2c;
+  padding: 15px 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(187, 134, 252, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.career-item .content:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(187, 134, 252, 0.3);
+}
+
+.career-item h3 {
+  color: #ffffff;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.career-item p {
+  color: #ccc;
+  font-size: 14px;
+  margin: 0;
+}

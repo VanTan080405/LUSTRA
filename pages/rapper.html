@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV Nguyễn Văn Tân</title>
+    <link rel="stylesheet" href="../css/style_rapper.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="dark-mode">
+    <button onclick="scrollToTop()" id="back-to-top">⬆</button>
+
+    <header class="navbar">
+      <img src="../images/images_rapper/logo.png" alt="Logo" class="logo" />
+      <nav>
+        <a href="../index.html">Trang chủ</a>
+        <a href="#career">Nghề nghiệp</a>
+      </nav>
+      <button onclick="toggleDarkMode()" class="dark-mode-btn">🌙</button>
+    </header>
+
+    <section id="home" class="banner">
+      <div class="banner-img clear-banner"></div>
+    </section>
+
+    <div class="main-content container">
+      <aside class="left-column">
+        <div class="info-box">
+          <img
+            src="..//images/images_rapper/WEB-DEVELOPER.png"
+            alt="Ảnh đại diện"
+            class="avatar"
+          />
+          <h2>Thông tin cá nhân</h2>
+          <div class="info-badges">
+            <span><strong>Họ và tên:</strong> NGUYỄN VĂN TÂN</span>
+            <span><strong>Ngày sinh:</strong> 08/04/2005</span>
+            <span><strong>Điện thoại:</strong> 0945 870 308</span>
+            <span><strong>Email:</strong> nguyentann0804@gmail.com</span>
+            <span><strong>Học tại:</strong> ĐH Giao thông Vận tải TP.HCM</span>
+            <span><strong>Ngành:</strong> Công nghệ thông tin</span>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <h2>Ngôn ngữ</h2>
+          <div class="skill-badges">
+            <span><i class="fas fa-language"></i> Tiếng Việt</span>
+            <span><i class="fas fa-language"></i> Tiếng Anh</span>
+            <span><i class="fab fa-cuttlefish"></i> C++</span>
+            <span><i class="fab fa-python"></i> Python</span>
+            <span><i class="fab fa-java"></i> Java</span>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <h2>Liên hệ</h2>
+          <div class="social-icons">
+            <a
+              href="https://www.facebook.com/nguyen.van.tan.702160?locale=vi_VN"
+              target="_blank"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="https://github.com/VanTan080405" target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="https://www.instagram.com/zen_tenn/" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </aside>
+      <section class="right-column">
+        <div class="career-goal-wrapper">
+          <h2 id="career">🎯 Mục tiêu nghề nghiệp</h2>
+          <div class="career-timeline">
+            <div class="career-item">
+              <div class="dot"></div>
+              <div class="content">
+                <h3>Phát triển toàn diện công nghệ & nghệ thuật</h3>
+                <p>
+                  Tôi mong muốn phát triển bản thân trong cả lĩnh vực CNTT và
+                  nghệ thuật để tạo ra các sản phẩm công nghệ mang tính truyền
+                  cảm hứng.
+                </p>
+              </div>
+            </div>
+
+            <div class="career-item">
+              <div class="dot"></div>
+              <div class="content">
+                <h3>Thành thạo công nghệ & kỹ năng mềm</h3>
+                <p>
+                  Trong ngắn hạn, tôi tập trung rèn luyện kỹ năng lập trình, tư
+                  duy phản biện và kinh nghiệm làm việc nhóm từ các dự án thực
+                  tế.
+                </p>
+              </div>
+            </div>
+
+            <div class="career-item">
+              <div class="dot"></div>
+              <div class="content">
+                <h3>Định hướng Edtech</h3>
+                <p>
+                  Tôi hướng tới việc tạo ra các nền tảng học tập tương tác kết
+                  hợp nghệ thuật và công nghệ, đóng góp tích cực cho cộng đồng
+                  giáo dục Việt Nam.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2 onclick="toggleDetail(this)" style="cursor: pointer">
+          🎖 Thành tích & Dự án
+        </h2>
+        <div class="timeline">
+          <!-- Lặp lại cho từng mục -->
+          <div class="timeline-item">
+            <div class="timeline-header" onclick="toggleDetail(this)">
+              <strong>06/2022</strong> - Chủ nhiệm CLB Văn nghệ xung kích
+            </div>
+            <div class="timeline-detail">
+              <button
+                class="close-btn"
+                onclick="this.parentElement.style.display='none'"
+              >
+                ×
+              </button>
+              <img src="../images/images_rapper/CLB.jpg" />
+              <p>
+                Chủ nhiệm CLB Văn nghệ Xung kích trường THPT Quang Trung nhiệm
+                kỳ 2022-2023.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-header" onclick="toggleDetail(this)">
+              <strong>09/2022</strong> - Dự án "Trung thu cho em"
+            </div>
+            <div class="timeline-detail">
+              <button
+                class="close-btn"
+                onclick="this.parentElement.style.display='none'"
+              >
+                ×
+              </button>
+              <img src="../images/images_rapper/trungthu.jpg" />
+              <p>Tham gia chương trình Trung thu cho em.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-header" onclick="toggleDetail(this)">
+              <strong>2023</strong> - Đoàn viên xuất sắc
+            </div>
+            <div class="timeline-detail">
+              <button
+                class="close-btn"
+                onclick="this.parentElement.style.display='none'"
+              >
+                ×
+              </button>
+              <img src="..//images/images_rapper/doanvien.jpg" />
+              <p>Được tuyên dương là Đoàn viên xuất sắc năm 2023.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-header" onclick="toggleDetail(this)">
+              <strong>10/2023</strong> - Tỏa sáng tài năng âm nhạc UTH
+            </div>
+            <div class="timeline-detail">
+              <button
+                class="close-btn"
+                onclick="this.parentElement.style.display='none'"
+              >
+                ×
+              </button>
+              <img src="../images/images_rapper/top10-2023.jpg" />
+              <p>Top 10 cuộc thi tỏa sáng tài năng âm nhạc UTH.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-header" onclick="toggleDetail(this)">
+              <strong>12/2023</strong> - Dự án "Đêm nhạc gây quỹ"
+            </div>
+            <div class="timeline-detail">
+              <button
+                class="close-btn"
+                onclick="this.parentElement.style.display='none'"
+              >
+                ×
+              </button>
+              <img src="../images/images_rapper/gayquy.jpg" />
+              <p>Tham gia tổ chức đêm nhạc gây quỹ giúp học sinh nghèo.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-header" onclick="toggleDetail(this)">
+              <strong>11/2024</strong> - Tỏa sáng tài năng âm nhạc UTH
+            </div>
+            <div class="timeline-detail">
+              <button
+                class="close-btn"
+                onclick="this.parentElement.style.display='none'"
+              >
+                ×
+              </button>
+              <img src="../images/images_rapper/top10-2024.jpg" />
+              <p>Top 10 cuộc thi tỏa sáng tài năng âm nhạc UTH năm 2024.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-header" onclick="toggleDetail(this)">
+              <strong>Chứng chỉ</strong> - Chính trị sơ cấp
+            </div>
+            <div class="timeline-detail">
+              <button
+                class="close-btn"
+                onclick="this.parentElement.style.display='none'"
+              >
+                ×
+              </button>
+              <img src="../images/images_rapper/dangvien.jpg" />
+              <p>Đạt chứng chỉ lý luận chính trị sơ cấp.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-box hobby-section">
+          <h2>Sở thích</h2>
+          <p>
+            Tôi đặc biệt đam mê nghệ thuật, ca hát, múa và nhảy – những hoạt
+            động giúp tôi cân bằng cảm xúc và thể hiện bản thân một cách sáng
+            tạo.
+          </p>
+        </div>
+
+        <div class="info-box">
+          <h2>Kỹ năng mềm</h2>
+          <div class="skill-badges">
+            <span><i class="fas fa-comments"></i> Giao tiếp</span>
+            <span><i class="fas fa-users"></i> Làm việc nhóm</span>
+            <span><i class="fas fa-lightbulb"></i> Sáng tạo</span>
+            <span><i class="fas fa-tools"></i> Giải quyết vấn đề</span>
+            <span><i class="fas fa-brain"></i> Tư duy phản biện</span>
+            <span><i class="fas fa-clock"></i> Quản lý thời gian</span>
+            <span><i class="fas fa-microphone"></i> Thuyết trình</span>
+            <span><i class="fas fa-bolt"></i> Học hỏi nhanh</span>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <h2 onclick="toggleDetail(this)" style="cursor: pointer">
+            📸 Ảnh cá nhân
+          </h2>
+          <div class="timeline-detail">
+            <img src="../images/images_rapper/cnvt1.jpg" alt="Ảnh cá nhân 1" />
+            <img src="../images/images_rapper/cnvt2.jpg" alt="Ảnh cá nhân 2" />
+            <img src="../images/images_rapper/cnvt3.jpg" alt="Ảnh cá nhân 3" />
+            <img src="../images/images_rapper/cnvt4.jpg" alt="Ảnh cá nhân 4" />
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      function toggleDetail(el) {
+        const detail = el.nextElementSibling;
+        detail.style.display =
+          detail.style.display === "block" ? "none" : "block";
+      }
+
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+      }
+
+      window.addEventListener("scroll", () => {
+        const bannerText = document.querySelector(".banner-text");
+        const triggerHeight = window.innerHeight * 0.8;
+        const bannerTop = bannerText.getBoundingClientRect().top;
+        if (bannerTop < triggerHeight) {
+          bannerText.classList.add("show");
+        }
+      });
+    </script>
+  </body>
+</html>

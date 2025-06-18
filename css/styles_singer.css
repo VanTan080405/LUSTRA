@@ -1,0 +1,948 @@
+/* General Styles: Artistic & Edgy Cream with Subtle Glow */
+:root {
+  /* Cream & Light Palette */
+  --primary-cream: #f5f5dc; /* Beige/Cream */
+  --secondary-cream: #fff8dc; /* Cornsilk - Lighter cream */
+  --accent-cream: #e6e6fa; /* Lavender - Soft accent color, now used more for subtle highlights */
+  --dark-text-color: #333; /* Dark text for contrast */
+  --light-text-color: #777; /* Lighter text for subtle details */
+  --border-color: #ddd; /* Light border color */
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+
+  /* Subtle Glow & Darker Tones for "Ngầu" */
+  --main-background: #9674106a; /* Hơi tối hơn một chút để tạo sự sang trọng */
+  --card-background: #ffffff;
+  --dark-accent: #5c5c5c; /* Một màu xám đậm để tạo điểm nhấn */
+  --border-dark-line: #a0a0a0; /* Đường kẻ mỏng, sắc nét */
+
+  /* Neon/Subtle Pop Accents (More like a soft, electric glow now) */
+  --soft-electric-blue: #aec6cf; /* Sky Blue - Màu xanh nhẹ nhàng hơn */
+  --soft-electric-pink: #ffc0cb; /* Pink - Màu hồng nhẹ nhàng hơn */
+  --text-highlight-color: #4caf50; /* Green for key highlights, modern feel */
+  --soft-glow: 0 0 5px var(--soft-electric-blue),
+    0 0 10px rgba(174, 198, 207, 0.5); /* Subtle glow */
+
+  --border-radius: 5px;
+}
+
+body {
+  /* Sử dụng font Montserrat cho sự hiện đại và dễ đọc */
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--main-background);
+  color: var(--dark-text-color);
+  line-height: 1.7; /* Tăng line-height cho dễ đọc và thoáng hơn */
+  overflow-x: hidden;
+}
+
+/* Các font đặc trưng sẽ được áp dụng cho các thẻ cụ thể */
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif; /* Font nghệ thuật, sang trọng cho tiêu đề */
+  color: var(--dark-text-color);
+  margin-bottom: 0.8em;
+  font-weight: bold; /* Để tiêu đề nổi bật hơn */
+  letter-spacing: 0.05em; /* Tăng khoảng cách chữ nhẹ */
+}
+
+a {
+  color: var(--dark-accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--soft-electric-blue);
+}
+
+/* --- Banner Section --- */
+.banner {
+  width: 100%;
+  height: 450px; /* Chiều cao banner lớn hơn */
+  background: url("images/your-banner-image.jpg") no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--dark-text-color); /* Chữ màu tối trên nền sáng */
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-dark-line); /* Đường viền sắc nét */
+}
+
+.banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4); /* Lớp phủ nhẹ nhàng, trong suốt hơn */
+  z-index: 1;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  transform: translateY(0);
+  opacity: 1;
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+.banner-content h1 {
+  font-family: "Times New Roman", serif; /* Hoặc một font script độc đáo nếu có thể nhúng */
+  font-size: 4em;
+  margin-bottom: 0.2em;
+  color: var(--dark-text-color);
+  /* Thay vì neon chói, dùng text-shadow nhẹ hoặc không dùng */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.08em; /* Tăng khoảng cách chữ cho sự "nghệ" */
+}
+
+.banner-content p {
+  font-family: "Lora", serif; /* Font serif khác, dịu dàng hơn cho phụ đề */
+  font-size: 1.5em;
+  color: var(--light-text-color);
+  font-style: italic; /* Thêm kiểu chữ nghiêng */
+}
+
+/* --- Navbar Section --- */
+.navbar {
+  background-color: var(--card-background);
+  padding: 1.2em 0;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Shadow tinh tế hơn */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--border-dark-line);
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.navbar li {
+  margin: 0 2em;
+}
+
+.navbar a {
+  font-family: "Montserrat", sans-serif; /* Font sạch, hiện đại cho nav */
+  color: var(--dark-text-color);
+  font-weight: bold; /* Nav links nên bold */
+  font-size: 1em;
+  padding: 0.5em 0.8em;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  text-transform: uppercase; /* Chữ hoa cho nav link */
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: var(--soft-electric-blue);
+  border-bottom: 2px solid var(--soft-electric-blue);
+}
+
+/* --- Main Content Layout (Grid) --- */
+.main-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5em; /* Khoảng cách lớn hơn để tạo sự thông thoáng */
+  padding: 4em 6%;
+  max-width: 1300px; /* Tăng max-width */
+  margin: 3em auto;
+}
+
+/* General Section Styling */
+.section-card {
+  background-color: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Shadow rõ hơn */
+  padding: 2.5em;
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.section-card:hover {
+  transform: translateY(-0.8em); /* Nổi lên rõ hơn */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Profile Section --- */
+.profile-section {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 3em;
+  max-width: 900px;
+  margin: 0 auto;
+  border: 1px solid var(--border-color);
+}
+
+.profile-image-container {
+  position: relative;
+  width: 180px; /* Kích thước ảnh vừa phải */
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1.5em;
+  border: 3px solid var(--soft-electric-blue); /* Viền màu xanh nhạt nghệ thuật */
+  box-shadow: var(--soft-glow); /* Glow nhẹ nhàng */
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.profile-image-container:hover {
+  transform: scale(1.08) rotate(-2deg); /* Phóng to và xoay nhẹ để tạo sự năng động */
+  box-shadow: 0 0 10px var(--soft-electric-pink),
+    0 0 20px rgba(255, 192, 203, 0.5); /* Đổi màu glow và mạnh hơn nhẹ */
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.social-icons {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.85); /* Nền hơi trong suốt */
+  padding: 0.8em 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.2em;
+  transform: translateY(100%);
+  transition: transform 0.4s ease-in-out;
+}
+
+.profile-image-container:hover .social-icons {
+  transform: translateY(0);
+}
+
+.social-icons a {
+  color: var(--light-text-color);
+  font-size: 1.5em;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--text-highlight-color); /* Màu xanh lá cho icon khi hover */
+  transform: translateY(-0.3em);
+}
+
+.profile-info h2 {
+  font-family: "Playfair Display", serif; /* Font nghệ thuật hơn cho tên */
+  font-size: 2.8em;
+  color: var(--dark-text-color);
+  margin-bottom: 0.5em;
+}
+
+.profile-info h3 {
+  font-family: "Lora", serif; /* Font serif mềm mại hơn cho chức danh */
+  font-size: 1.3em;
+  color: var(--light-text-color);
+  margin-bottom: 1.5em;
+  font-style: italic;
+}
+
+.profile-info p {
+  font-family: "Fleur De Leah", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.8em;
+  color: var(--dark-text-color);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- Interests Section --- */
+.interests-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2em;
+  justify-content: center;
+}
+
+.interests-list li {
+  background-color: var(--secondary-cream);
+  color: var(--dark-text-color);
+  padding: 0.9em 1.5em;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: normal;
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+.interests-list li:hover {
+  background-color: var(--soft-electric-pink);
+  color: #fff; /* Chữ trắng trên nền hồng */
+  transform: translateY(-0.4em);
+}
+
+.interests-list li i {
+  color: var(--dark-accent);
+  font-size: 1.1em;
+}
+.interests-list li:hover i {
+  color: #fff;
+}
+
+/* --- Language & Skills Section (Flexbox) --- */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5em;
+  justify-content: space-around;
+}
+
+.language-section,
+.skill-section {
+  flex: 1;
+  min-width: 280px;
+  padding: 1.5em;
+  background-color: var(--main-background); /* Nền khớp với body */
+  border-radius: var(--border-radius);
+  border: 1px dashed var(--border-color);
+}
+
+.language-section ul,
+.skill-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.language-section li {
+  padding: 0.8em 0;
+  border-bottom: 1px dashed var(--border-color);
+  font-size: 1em;
+  color: var(--dark-text-color);
+}
+
+.language-section li:last-child {
+  border-bottom: none;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8em;
+}
+
+.skill-tags li {
+  background-color: var(--accent-cream);
+  color: var(--dark-text-color);
+  padding: 0.7em 1em;
+  border-radius: 5px;
+  font-size: 0.9em;
+  font-weight: normal;
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+.skill-tags li:hover {
+  background-color: var(--soft-electric-blue);
+  color: #fff;
+  transform: scale(1.08);
+}
+
+/* --- Certificates & Awards Section --- */
+.awards-list {
+  list-style: none;
+  padding: 0;
+}
+
+.awards-list li {
+  background-color: var(--card-background);
+  padding: 1em 1.2em;
+  margin-bottom: 1em;
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-left: 3px solid var(--soft-electric-pink); /* Đường viền nhẹ */
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    border-left-color 0.3s ease;
+}
+
+.awards-list li:hover {
+  background-color: var(--secondary-cream);
+  transform: translateX(0.5em);
+  border-left-color: var(--soft-electric-blue); /* Đổi màu viền khi hover */
+}
+
+.awards-list li i {
+  color: var(--soft-electric-pink);
+  font-size: 1.3em;
+}
+.awards-list li:hover i {
+  color: var(--soft-electric-blue);
+}
+
+/* --- Projects Section (Grid for projects) --- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2em;
+}
+
+.project-item {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 2em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item:hover {
+  transform: translateY(-0.7em);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.project-item h3 {
+  font-family: "Playfair Display", serif; /* Font nghệ thuật cho tiêu đề dự án */
+  color: var(--dark-text-color);
+  margin-top: 0;
+  margin-bottom: 0.8em;
+  font-size: 1.3em;
+}
+
+.project-item p {
+  color: var(--light-text-color);
+  font-size: 0.95em;
+}
+
+/* --- Contact Section --- */
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  background-color: var(--accent-cream);
+  color: var(--dark-text-color);
+  padding: 0.9em 1.5em;
+  border-radius: 30px;
+  font-weight: normal;
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-links a:hover {
+  background-color: var(--soft-electric-pink);
+  color: #fff;
+  transform: translateY(-0.4em);
+}
+
+.contact-links a i {
+  font-size: 1.3em;
+  color: var(--dark-accent);
+}
+.contact-links a:hover i {
+  color: #fff;
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 1.8em;
+  background-color: var(--card-background);
+  color: var(--light-text-color);
+  margin-top: 3em;
+  font-size: 0.9em;
+  border-top: 1px solid var(--border-dark-line);
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design (giữ nguyên hoặc điều chỉnh nhẹ) */
+@media (max-width: 992px) {
+  .banner-content h1 {
+    font-size: 3.5em;
+  }
+  .banner-content p {
+    font-size: 1.3em;
+  }
+  .main-content {
+    padding: 3em 5%;
+  }
+  .profile-info h2 {
+    font-size: 2.2em;
+  }
+  .profile-info h3 {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    height: 350px;
+  }
+  .banner-content h1 {
+    font-size: 2.8em;
+  }
+  .banner-content p {
+    font-size: 1.1em;
+  }
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  .navbar li {
+    margin: 0.5em 0;
+  }
+  .main-content {
+    grid-template-columns: 1fr;
+    padding: 2.5em 4%;
+    gap: 2em;
+  }
+  .profile-card {
+    padding: 2em;
+  }
+  .profile-image-container {
+    width: 150px;
+    height: 150px;
+  }
+  .profile-info h2 {
+    font-size: 2em;
+  }
+  .profile-info h3 {
+    font-size: 1em;
+  }
+  .skills-container {
+    flex-direction: column;
+    gap: 2em;
+  }
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
+  .section-card {
+    padding: 2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner {
+    height: 300px;
+  }
+  .banner-content h1 {
+    font-size: 2em;
+  }
+  .banner-content p {
+    font-size: 0.9em;
+  }
+  .navbar a {
+    font-size: 0.9em;
+    padding: 0.4em 0.7em;
+  }
+  .section-card {
+    padding: 1.5em;
+  }
+  .profile-image-container {
+    width: 120px;
+    height: 120px;
+  }
+  .profile-info h2 {
+    font-size: 1.6em;
+  }
+  .profile-info h3 {
+    font-size: 0.9em;
+  }
+  .interests-list li,
+  .contact-links a {
+    padding: 0.7em 1em;
+    font-size: 0.9em;
+  }
+}
+
+/* Thêm hoặc cập nhật phần này trong style.css */
+
+.certificate-preview {
+  position: fixed;
+  top: 0; /* Đặt lại top và left để phủ toàn màn hình */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.85
+  ); /* Nền đen mờ đậm hơn để che mờ trang */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease; /* Hiệu ứng mượt mà hơn */
+}
+
+.certificate-preview.active {
+  /* Thêm class active để điều khiển hiển thị */
+  opacity: 1;
+  visibility: visible;
+}
+
+.certificate-preview img {
+  max-width: 90%; /* Đảm bảo ảnh không tràn ra ngoài */
+  max-height: 90%;
+  display: block;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); /* Shadow mạnh hơn cho ảnh popup */
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 2.5em;
+  cursor: pointer;
+  z-index: 2001; /* Đảm bảo nút đóng nằm trên ảnh và nền */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.close-button:hover {
+  color: var(--soft-electric-pink); /* Màu hồng nhạt khi hover */
+  transform: rotate(90deg); /* Xoay nhẹ khi hover */
+}
+
+/* Ẩn overflow của body khi ảnh hiện lên để không bị scroll */
+body.no-scroll {
+  overflow: hidden;
+}
+
+/* Cập nhật các biến màu (nếu chưa có) */
+:root {
+  /* Cream & Light Palette */
+  --primary-cream: #f5f5dc; /* Beige/Cream */
+  --secondary-cream: #fff8dc; /* Cornsilk - Lighter cream */
+  --accent-cream: #e6e6fa; /* Lavender - Soft accent color, now used more for subtle highlights */
+  --dark-text-color: #333; /* Dark text for contrast */
+  --light-text-color: #777; /* Lighter text for subtle details */
+  --border-color: #ddd; /* Light border color */
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+
+  /* Subtle Glow & Darker Tones for "Ngầu" */
+  --main-background: #f8f8f8; /* Hơi tối hơn một chút để tạo sự sang trọng */
+  --card-background: #ffffff;
+  --dark-accent: #5c5c5c; /* Một màu xám đậm để tạo điểm nhấn */
+  --border-dark-line: #a0a0a0; /* Đường kẻ mỏng, sắc nét */
+
+  /* Neon/Subtle Pop Accents (More like a soft, electric glow now) */
+  --soft-electric-blue: #aec6cf; /* Sky Blue - Màu xanh nhẹ nhàng hơn */
+  --soft-electric-pink: #ffc0cb; /* Pink - Màu hồng nhẹ nhàng hơn */
+  --text-highlight-color: #4caf50; /* Green for key highlights, modern feel */
+  --soft-glow: 0 0 5px var(--soft-electric-blue),
+    0 0 10px rgba(174, 198, 207, 0.5); /* Subtle glow */
+
+  --border-radius: 5px;
+}
+
+/* --- Personal Details Accordion (Thiết kế mới: Tối giản & Hiện đại) --- */
+.personal-details-accordion {
+  margin-top: 2.5em; /* Khoảng cách với intro-text */
+  width: 100%;
+  max-width: 650px; /* Giảm max-width một chút để trông tập trung hơn */
+  margin-left: auto;
+  margin-right: auto;
+  /* Loại bỏ border, box-shadow cũ để trông tối giản hơn */
+  border: none;
+  box-shadow: none;
+  background-color: transparent; /* Nền trong suốt */
+  border-radius: var(
+    --border-radius
+  ); /* Vẫn giữ bo góc nhẹ nếu nội dung có nền */
+  overflow: hidden; /* Quan trọng cho animation trượt và bo góc */
+}
+
+.accordion-header {
+  background-color: var(--secondary-cream); /* Nền nhẹ nhàng cho header */
+  padding: 1.2em 2em; /* Tăng padding để thoáng hơn */
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: var(--border-radius); /* Bo góc cho header */
+  position: relative; /* Dùng cho hiệu ứng gạch chân */
+  overflow: hidden; /* Quan trọng cho gạch chân động */
+  box-shadow: var(--box-shadow); /* Shadow nhẹ cho header */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.accordion-header:hover {
+  background-color: var(--accent-cream); /* Đổi màu nền nhẹ khi hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Shadow rõ hơn khi hover */
+}
+
+/* Hiệu ứng gạch chân động cho header */
+.accordion-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0; /* Ban đầu chiều rộng bằng 0 */
+  height: 3px; /* Độ dày của đường gạch */
+  background-color: var(--soft-electric-blue); /* Màu của đường gạch */
+  transition: width 0.3s ease-out; /* Animation cho chiều rộng */
+}
+
+.accordion-header:hover::after,
+.accordion-header.active::after {
+  width: 100%; /* Kéo dài 100% khi hover hoặc active */
+}
+
+.accordion-header h3 {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 1.4em; /* Kích thước lớn hơn một chút */
+  color: var(--dark-text-color);
+  letter-spacing: 0.05em; /* Tăng khoảng cách chữ nhẹ */
+}
+
+.accordion-icon {
+  font-size: 1.1em; /* Kích thước icon */
+  color: var(--dark-accent);
+  transition: transform 0.3s ease-out, color 0.3s ease;
+}
+
+/* Xoay mũi tên khi accordion được mở */
+.accordion-header.active .accordion-icon {
+  transform: rotate(180deg);
+  color: var(--soft-electric-blue);
+}
+
+.accordion-content {
+  background-color: var(--card-background); /* Nền cho nội dung chi tiết */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, padding 0.4s ease-out; /* Thêm padding vào transition */
+  border-bottom-left-radius: var(
+    --border-radius
+  ); /* Bo góc dưới cho nội dung */
+  border-bottom-right-radius: var(--border-radius);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Shadow cho phần nội dung */
+  margin-top: 5px; /* Khoảng cách nhỏ giữa header và content */
+}
+
+/* Hiển thị nội dung khi accordion được mở */
+.accordion-content.active {
+  max-height: 500px; /* Đảm bảo đủ lớn */
+  padding: 1.5em 2em; /* Padding khi nội dung hiển thị */
+}
+
+/* Style lại cho Personal Details Grid BÊN TRONG Accordion Content */
+.personal-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.8em 1.5em; /* Khoảng cách giữa các mục */
+  /* Loại bỏ padding, border, background từ grid container vì đã có trên accordion-content */
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  text-align: left;
+  color: var(--dark-text-color);
+}
+
+.personal-details-grid div {
+  font-size: 0.95em;
+  line-height: 1.4;
+  padding: 0;
+  background-color: transparent; /* Đảm bảo nền trong suốt */
+  border-radius: 0;
+  box-shadow: none;
+  transition: none;
+  border-bottom: 1px dashed var(--border-color); /* Gạch dưới mỗi dòng */
+  padding-bottom: 0.5em;
+  margin-bottom: 0.5em;
+}
+.personal-details-grid div:last-child {
+  border-bottom: none; /* Bỏ gạch dưới dòng cuối cùng */
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.personal-details-grid div strong {
+  display: inline;
+  font-family: "Montserrat", sans-serif; /* Font sạch, hiện đại */
+  font-size: 1em;
+  color: var(--dark-accent);
+  margin-bottom: 0;
+  font-weight: 600; /* Hơi đậm hơn */
+  letter-spacing: 0;
+}
+
+.personal-details-grid div span {
+  font-family: "Lora", serif; /* Font serif thanh lịch */
+  color: var(--dark-text-color);
+  font-size: 0.95em; /* Kích thước nhỏ hơn tiêu đề một chút */
+  margin-left: 0.5em; /* Khoảng cách giữa tiêu đề và nội dung */
+}
+
+/* Responsive cho Personal Details Accordion */
+@media (max-width: 768px) {
+  .personal-details-accordion {
+    max-width: 90%; /* Để rộng hơn trên mobile */
+  }
+  .accordion-header {
+    padding: 1em 1.2em;
+  }
+  .accordion-header h3 {
+    font-size: 1.2em;
+  }
+  .accordion-content.active {
+    padding: 1em 1.2em; /* Giảm padding trên mobile */
+  }
+  .personal-details-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8em;
+  }
+  .personal-details-grid div {
+    font-size: 0.9em;
+  }
+  .personal-details-grid div strong {
+    font-size: 0.95em;
+  }
+  .personal-details-grid div span {
+    font-size: 0.85em;
+  }
+}
+
+.goals-section h2 {
+  text-align: center;
+  margin-bottom: 1.5em; /* Khoảng cách vừa phải */
+  font-size: 2.5em;
+  color: var(--dark-text-color);
+}
+
+.goals-list-animated {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px; /* Giới hạn chiều rộng để danh sách không quá dàn trải */
+  border-radius: var(--border-radius);
+  overflow: hidden; /* Đảm bảo hiệu ứng viền không bị tràn */
+}
+
+.goals-list-animated li {
+  display: flex;
+  align-items: center;
+  background-color: var(--secondary-cream); /* Nền cho mỗi mục */
+  padding: 1.2em 1.5em; /* Padding đủ để nội dung không bị sát */
+  margin-bottom: 0.8em; /* Khoảng cách giữa các mục */
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Shadow nhẹ nhàng */
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out,
+    background-color 0.3s ease;
+  cursor: pointer;
+  position: relative; /* Dùng cho hiệu ứng viền hoặc gạch chân */
+  overflow: hidden;
+}
+
+.goals-list-animated li:last-child {
+  margin-bottom: 0; /* Loại bỏ margin ở mục cuối cùng */
+}
+
+.goals-list-animated li:hover {
+  transform: translateY(-0.5em) scale(1.01); /* Nổi lên nhẹ và phóng to một chút */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  background-color: var(--accent-cream); /* Đổi màu nền khi hover */
+}
+
+.goals-icon {
+  font-size: 1.8em; /* Kích thước icon ban đầu */
+  color: var(--soft-electric-blue); /* Màu icon ban đầu */
+  margin-right: 1em; /* Khoảng cách với text */
+  transition: color 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.goals-list-animated li:hover .goals-icon {
+  color: var(--soft-electric-pink); /* Đổi màu icon khi hover */
+  transform: rotate(5deg) scale(1.1); /* Xoay và phóng to icon */
+}
+
+.goals-text {
+  font-family: "Lora", serif; /* Font serif tinh tế cho text mục tiêu */
+  font-size: 1.1em; /* Kích thước text mục tiêu */
+  color: var(--dark-text-color);
+  flex-grow: 1; /* Cho phép text chiếm hết không gian còn lại */
+  transition: color 0.3s ease-out;
+}
+
+.goals-list-animated li:hover .goals-text {
+  color: var(--dark-accent); /* Làm tối hơn text khi hover */
+}
+
+.goals-text strong {
+  font-family: "Playfair Display", serif; /* Font đặc biệt cho từ khóa chính */
+  font-weight: bold;
+  color: var(--text-highlight-color); /* Màu xanh lá nổi bật cho từ khóa */
+  transition: color 0.3s ease-out;
+}
+
+.goals-list-animated li:hover .goals-text strong {
+  color: var(
+    --dark-text-color
+  ); /* Đổi màu từ khóa khi hover (hoặc giữ nguyên nếu muốn) */
+}
+
+/* Responsive cho Goals Section mới */
+@media (max-width: 768px) {
+  .goals-list-animated li {
+    padding: 1em; /* Giảm padding trên mobile */
+    font-size: 0.95em;
+  }
+  .goals-icon {
+    font-size: 1.5em; /* Giảm kích thước icon trên mobile */
+    margin-right: 0.8em;
+  }
+  .goals-text {
+    font-size: 1em; /* Giảm kích thước text trên mobile */
+  }
+}

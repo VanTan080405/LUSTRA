@@ -1,0 +1,864 @@
+/* General styles for all pages */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #111; /* Keep a fallback color */
+  color: #ffffff;
+  background-image: url("../images/background1.png"); /* Di chuyển background chính lên body */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Đảm bảo background cố định cho toàn bộ trang */
+}
+
+nav {
+  background-color: rgba(0, 0, 0, 0); /* Thay đổi thành trong suốt */
+  position: fixed;
+  width: 100%;
+  padding: 10px 0; /* Giảm padding để thanh menu mỏng hơn */
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.nav-container h1 {
+  font-size: 2rem;
+  color: #4975d4;
+}
+
+.nav-links a {
+  color: #4975d4;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 1.1rem;
+}
+
+.nav-links a:hover {
+  color: #4975d4;
+}
+
+/* Home section styles (from index.html) */
+#home {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /* Loại bỏ background cụ thể, sẽ kế thừa từ body */
+  position: relative;
+}
+
+/* Kiểu cho logo Lustra hình ảnh */
+.lustra-logo {
+  max-width: 500px; /* Điều chỉnh kích thước tối đa của logo */
+  width: 80%; /* Giúp logo responsive */
+  height: auto;
+  display: block; /* Đảm bảo căn giữa */
+  margin: 0 auto 20px auto; /* Căn giữa và tạo khoảng cách dưới */
+  z-index: 20; /* Đảm bảo logo nằm trên các ảnh trang trí */
+  position: relative; /* Quan trọng để z-index hoạt động */
+}
+
+/* Các ảnh trang trí xung quanh logo trên trang chủ (index.html) */
+.hero-image-1,
+.hero-image-2,
+.hero-image-3,
+.hero-image-4,
+.hero-image-5,
+.hero-image-6 {
+  position: absolute;
+  width: 120px; /* Kích thước mặc định */
+  height: 120px; /* Kích thước mặc định */
+  object-fit: contain; /* Đảm bảo ảnh không bị cắt */
+  z-index: 15; /* Nằm dưới logo nhưng trên nền */
+  animation: floating 5s ease-in-out infinite alternate; /* Hiệu ứng nổi */
+  filter: drop-shadow(
+    0 0 8px rgba(0, 191, 255, 0.5)
+  ); /* Thêm hiệu ứng phát sáng */
+}
+
+/* Vị trí lộn xộn hơn cho các ảnh trên trang chủ */
+.hero-image-1 {
+  top: 18%; /* Điều chỉnh lại vị trí */
+  left: 12%; /* Điều chỉnh lại vị trí */
+  width: 95px; /* Kích thước riêng */
+  height: 95px;
+  animation-delay: 0.3s; /* Thay đổi delay */
+}
+
+.hero-image-2 {
+  top: 15%; /* Điều chỉnh lại vị trí */
+  right: 10%; /* Điều chỉnh lại vị trí */
+  width: 125px; /* Kích thước riêng */
+  height: 125px;
+  animation-delay: 1.2s; /* Thay đổi delay */
+}
+
+.hero-image-3 {
+  bottom: 10%; /* Điều chỉnh lại vị trí */
+  left: 15%; /* Điều chỉnh lại vị trí */
+  width: 85px; /* Kích thước riêng */
+  height: 85px;
+  animation-delay: 2.1s; /* Thay đổi delay */
+}
+
+.hero-image-4 {
+  bottom: 5%; /* Điều chỉnh lại vị trí */
+  right: 18%; /* Điều chỉnh lại vị trí */
+  width: 105px; /* Kích thước riêng */
+  height: 105px;
+  animation-delay: 3s; /* Thay đổi delay */
+}
+
+.hero-image-5 {
+  /* Ảnh mới 1 */
+  top: 50%;
+  right: 5%;
+  width: 75px;
+  height: 75px;
+  animation-delay: 0.8s;
+  animation-duration: 4.5s; /* Thời gian animation riêng */
+}
+
+.hero-image-6 {
+  /* Ảnh mới 2 */
+  bottom: 30%;
+  left: 8%;
+  width: 115px;
+  height: 115px;
+  animation-delay: 2.7s;
+  animation-duration: 5.5s; /* Thời gian animation riêng */
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(10px, -15px) rotate(5deg);
+  }
+  50% {
+    transform: translate(-10px, 15px) rotate(-5deg);
+  }
+  75% {
+    transform: translate(5px, -10px) rotate(3deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  position: relative; /* Đảm bảo tagline nằm trên các ảnh */
+  z-index: 20;
+}
+
+.hero-content a {
+  background-color: #4975d4;
+  color: #ffffff;
+  padding: 10px 25px;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  position: relative; /* Đảm bảo nút nằm trên các ảnh */
+  z-index: 20;
+}
+
+.hero-content a:hover {
+  background-color: #4975d4;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Members section styles (from index.html) */
+#members {
+  padding: 80px 20px;
+  background-color: transparent; /* Đặt nền trong suốt để background của body hiển thị */
+  position: relative;
+  /* Loại bỏ background-size, background-position, background-attachment vì đã được xử lý bởi body */
+}
+
+/* Lớp CSS cho background của phần Meet LUSTRA */
+.meet-lustra-background {
+  /* Loại bỏ background-image cụ thể, sẽ sử dụng background của body */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#members h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.member-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.member-card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.member-card:hover img {
+  transform: scale(1.1);
+}
+
+.member-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.member-card:hover .member-info {
+  opacity: 1;
+}
+
+.member-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.member-info p {
+  color: #ff4d94;
+  font-size: 1.1rem;
+}
+
+/* About section styles (from index.html) */
+#about {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #111; /* Đảm bảo phần about có background riêng */
+}
+
+#about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+#about p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Footer styles (from index.html) */
+footer {
+  background-color: #000;
+  padding: 20px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .lustra-logo {
+    max-width: 300px;
+  }
+  /* Vị trí lộn xộn hơn trên mobile */
+  .hero-image-1 {
+    top: 15%;
+    left: 8%;
+    width: 60px;
+    height: 60px;
+  }
+  .hero-image-2 {
+    top: 5%;
+    right: 5%;
+    width: 80px;
+    height: 80px;
+  }
+  .hero-image-3 {
+    bottom: 18%;
+    left: 10%;
+    width: 50px;
+    height: 50px;
+  }
+  .hero-image-4 {
+    bottom: 3%;
+    right: 12%;
+    width: 70px;
+    height: 70px;
+  }
+  .hero-image-5 {
+    top: 25%;
+    right: 3%;
+    width: 50px;
+    height: 50px;
+  }
+  .hero-image-6 {
+    bottom: 25%;
+    left: 5%;
+    width: 70px;
+    height: 70px;
+  }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  .members-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .lustra-logo {
+    max-width: 250px;
+  }
+  /* Vị trí lộn xộn hơn trên mobile nhỏ */
+  .hero-image-1 {
+    top: 10%;
+    left: 5%;
+    width: 40px;
+    height: 40px;
+  }
+  .hero-image-2 {
+    top: 3%;
+    right: 3%;
+    width: 60px;
+    height: 60px;
+  }
+  .hero-image-3 {
+    bottom: 10%;
+    left: 5%;
+    width: 30px;
+    height: 30px;
+  }
+  .hero-image-4 {
+    bottom: 1%;
+    right: 8%;
+    width: 50px;
+    height: 50px;
+  }
+  .hero-image-5 {
+    top: 15%;
+    right: 1%;
+    width: 30px;
+    height: 30px;
+  }
+  .hero-image-6 {
+    bottom: 15%;
+    left: 2%;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Specific styles for member profile pages - Refined and Luxurious */
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px; /* Giảm padding một chút cho sự đơn giản */
+  max-width: 1000px; /* Giảm max-width để trang trông gọn hơn */
+  margin: 80px auto 20px auto;
+  background: rgba(0, 0, 0, 0.3); /* Nền tối và trong suốt hơn */
+  border-radius: 15px; /* Giảm bo tròn một chút */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6); /* Bóng sâu hơn */
+  backdrop-filter: blur(8px); /* Tăng độ mờ nền */
+  border: 1px solid rgba(255, 255, 255, 0.05); /* Viền mỏng và tinh tế */
+  position: relative; /* Đảm bảo z-index hoạt động và nằm trên ảnh trang trí */
+  z-index: 10;
+}
+
+@media (min-width: 768px) {
+  .profile-container {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 30px; /* Giảm khoảng cách giữa ảnh và nội dung */
+  }
+}
+
+.profile-photo {
+  flex: 1;
+  max-width: 350px; /* Giảm kích thước ảnh */
+  margin-bottom: 25px;
+  border-radius: 10px; /* Giảm bo tròn ảnh */
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5); /* Bóng ảnh tinh tế hơn */
+}
+
+.profile-photo img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover; /* Giữ object-fit: cover để ảnh luôn lấp đầy, tránh khoảng trắng */
+  height: 450px; /* Cố định chiều cao để đồng nhất hơn */
+  transition: transform 0.4s ease-in-out;
+}
+
+.profile-photo img:hover {
+  transform: scale(1.03); /* Hiệu ứng zoom nhẹ nhàng hơn */
+}
+
+.profile-content {
+  flex: 2;
+  /* Đã thay đổi màu nền thông tin cá nhân cho các trang cụ thể */
+  background-color: rgba(
+    15,
+    15,
+    15,
+    0.6
+  ); /* Nền tối hơn và trong suốt hơn (mặc định) */
+  padding: 35px; /* Giảm padding một chút */
+  border-radius: 15px; /* Giữ bo tròn như container */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5); /* Bóng tinh tế hơn */
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Viền tinh tế hơn */
+}
+
+.profile-content header h1 {
+  font-size: 2.8rem; /* Giảm kích thước chữ H1 một chút */
+  margin-bottom: 25px;
+  text-align: center;
+  font-family: "Orbitron", sans-serif;
+  letter-spacing: 1px; /* Giảm khoảng cách chữ */
+  position: relative;
+  padding-bottom: 12px; /* Giảm padding */
+  text-transform: uppercase; /* Chữ hoa cho sự sang trọng */
+  font-weight: 700; /* Đậm hơn */
+}
+
+.profile-content header h1::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 60px; /* Giảm chiều rộng đường kẻ */
+  height: 2px; /* Giảm độ dày đường kẻ */
+  background: linear-gradient(to right, transparent, currentColor, transparent);
+  border-radius: 5px;
+}
+
+.profile-content section {
+  margin-bottom: 25px; /* Giảm khoảng cách giữa các phần */
+  padding: 18px; /* Giảm padding cho từng section */
+  border-radius: 8px; /* Giảm bo tròn cho section */
+  background-color: rgba(25, 25, 25, 0.4); /* Nền trong suốt hơn */
+  box-shadow: none; /* Loại bỏ inner shadow để đơn giản */
+  border: 1px solid rgba(255, 255, 255, 0.03); /* Viền rất mỏng */
+}
+
+.profile-content section h2 {
+  font-size: 1.6rem; /* Giảm kích thước H2 một chút */
+  margin-bottom: 15px;
+  border-bottom: none;
+  padding-bottom: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 600; /* Giảm độ đậm */
+  position: relative;
+  padding-left: 35px; /* Giảm padding-left */
+  color: #e0e0e0; /* Màu chữ sáng hơn */
+}
+
+.profile-content section h2::before {
+  content: "✦"; /* Đổi icon ngôi sao thành diamond/sparkle */
+  color: currentColor;
+  font-size: 1.1em; /* Giảm kích thước icon */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.profile-content p,
+.profile-content ul {
+  font-size: 1.1rem; /* Giảm kích thước chữ một chút */
+  line-height: 1.7; /* Giảm khoảng cách dòng một chút */
+  margin-bottom: 8px; /* Giảm margin */
+  color: #c0c0c0; /* Màu chữ trung tính hơn */
+}
+
+.profile-content ul {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.profile-content ul li {
+  margin-bottom: 6px; /* Giảm margin */
+  position: relative;
+  padding-left: 18px; /* Giảm padding */
+}
+
+.profile-content ul li::before {
+  content: "•";
+  color: currentColor;
+  position: absolute;
+  left: 0;
+  font-weight: normal; /* Giảm độ đậm */
+  font-size: 1.1em; /* Giảm kích thước bullet */
+}
+
+/* Styles for background settings section */
+#background-settings {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: rgba(30, 30, 30, 0.5);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: center;
+}
+
+#background-settings h2 {
+  color: #ff4d94; /* Màu hồng chủ đạo */
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+#background-settings input[type="file"] {
+  display: block;
+  margin: 15px auto;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid #ff4d94;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#background-settings button {
+  background-color: #ff4d94;
+  color: #ffffff;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+#background-settings button:hover {
+  background-color: #e0337a;
+}
+
+/* Social links with icons */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px; /* Giảm khoảng cách giữa các icon */
+  margin-top: 30px; /* Giảm margin top */
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px; /* Giảm kích thước nút */
+  height: 50px; /* Giảm kích thước nút */
+  background: rgba(255, 255, 255, 0.05); /* Nền rất trong suốt và tinh tế */
+  border-radius: 50%;
+  color: #fff;
+  font-size: 2rem; /* Giảm kích thước icon */
+  text-decoration: none;
+  transition: all 0.3s ease-in-out; /* Hiệu ứng nhanh hơn */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4),
+    inset 0 0 5px rgba(255, 255, 255, 0.02); /* Bóng mềm hơn */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.social-links a:hover {
+  transform: translateY(-5px) scale(1.08); /* Nổi lên và to hơn nhẹ nhàng hơn */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6),
+    inset 0 0 8px rgba(255, 255, 255, 0.08);
+}
+
+/* Các ảnh trang trí của trang cá nhân */
+.profile-deco-image {
+  position: fixed; /* Thay đổi thành fixed để chúng nổi trên toàn bộ viewport */
+  object-fit: contain;
+  z-index: 1; /* Nằm dưới profile-container */
+  animation: floatingProfileDeco 7s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.4));
+  pointer-events: none; /* Ngăn chặn ảnh chặn click vào các thành phần khác */
+}
+
+.profile-deco-1 {
+  top: 8%;
+  left: -10%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 0.5s;
+  animation-duration: 6s;
+}
+
+.profile-deco-2 {
+  top: 25%;
+  right: 85%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 1.2s;
+  animation-duration: 7.5s;
+}
+
+.profile-deco-3 {
+  bottom: 20%;
+  left: 5%;
+  width: 70px;
+  height: 70px;
+  animation-delay: 2s;
+  animation-duration: 6.5s;
+}
+
+.profile-deco-4 {
+  bottom: 10%;
+  right: 5%;
+  width: 95px;
+  height: 95px;
+  animation-delay: 3s;
+  animation-duration: 8s;
+}
+
+@keyframes floatingProfileDeco {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  33% {
+    transform: translate(15px, 25px) rotate(8deg) scale(1.05);
+  }
+  66% {
+    transform: translate(-10px, -20px) rotate(-5deg) scale(0.98);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+}
+
+/* Individual Member Styles - Refined & Luxurious Cosmic Themes */
+
+/* Anh Vũ (singer.html) - Celestial Harmony (Blue & Gold) */
+body.AnhVu-profile {
+  background: radial-gradient(
+    ellipse at bottom,
+    #050918 0%,
+    #000205 100%
+  ); /* Nền mặc định */
+  background-image: url("../images/CNanhvu.jpg"); /* Thêm background ảnh cho trang cá nhân */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+body.AnhVu-profile .profile-content {
+  /* Thay đổi màu nền sang màu cafe sữa */
+  background-color: rgba(112, 66, 20, 0.8); /* Màu nâu cafe sữa tối */
+  border: 1px solid rgba(255, 215, 0, 0.3); /* Viền vàng kim tinh tế */
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.4); /* Phát sáng vàng kim nhẹ */
+}
+body.AnhVu-profile .profile-content header h1,
+body.AnhVu-profile .profile-content section h2,
+body.AnhVu-profile .profile-content ul li::before {
+  color: #ffd700; /* Vàng kim */
+}
+body.AnhVu-profile .profile-content header h1::after {
+  background: linear-gradient(to right, transparent, #ffd700, transparent);
+}
+body.AnhVu-profile .profile-content section {
+  border: 1px solid rgba(255, 215, 0, 0.1); /* Viền section vàng kim mỏng */
+}
+body.AnhVu-profile .social-links a {
+  background: linear-gradient(45deg, #00bfff, #1e90ff);
+  box-shadow: 0 3px 10px rgba(0, 191, 255, 0.3);
+}
+body.AnhVu-profile .social-links a:hover {
+  background: linear-gradient(45deg, #ffd700, #ffa500);
+  color: #050918;
+}
+
+/* Văn Tân (mainvisual.html) - Galactic Aura (Purple & Silver) */
+body.VanTan-profile {
+  background: radial-gradient(
+    ellipse at bottom,
+    #180327 0%,
+    #070110 100%
+  ); /* Nền mặc định */
+  background-image: url("../images/CNvantan.jpg"); /* Thêm background ảnh cho trang cá nhân */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+body.VanTan-profile .profile-content {
+  /* Thay đổi màu nền sang màu vàng tối */
+  background-color: rgba(85, 68, 0, 0.8); /* Màu vàng tối */
+  border: 1px solid rgba(192, 192, 192, 0.3); /* Viền bạc tinh tế */
+  box-shadow: 0 0 25px rgba(192, 192, 192, 0.4); /* Phát sáng bạc nhẹ */
+}
+body.VanTan-profile .profile-content header h1,
+body.VanTan-profile .profile-content section h2,
+body.VanTan-profile .profile-content ul li::before {
+  color: #c0c0c0; /* Bạc */
+}
+body.VanTan-profile .profile-content header h1::after {
+  background: linear-gradient(to right, transparent, #c0c0c0, transparent);
+}
+body.VanTan-profile .profile-content section {
+  border: 1px solid rgba(192, 192, 192, 0.1);
+}
+body.VanTan-profile .social-links a {
+  background: linear-gradient(45deg, #da70d6, #9932cc);
+  box-shadow: 0 3px 10px rgba(218, 112, 214, 0.3);
+}
+body.VanTan-profile .social-links a:hover {
+  background: linear-gradient(45deg, #c0c0c0, #a9a9a9);
+  color: #180327;
+}
+
+/* Thùy Trâm (dancer.html) - Cosmic Oasis (Hồng tím Galaxy) */
+body.ThuyTram-profile {
+  background: radial-gradient(
+    ellipse at bottom,
+    #2a0a3a 0%,
+    #1a0525 100%
+  ); /* Nền mặc định hồng tím đậm hơn */
+  background-image: url("../images/CNthuytram.png"); /* Thêm background ảnh cho trang cá nhân */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+body.ThuyTram-profile .profile-content {
+  background-color: rgba(42, 10, 58, 0.8); /* Nền trong suốt hơn */
+  border: 1px solid rgba(255, 105, 180, 0.3); /* Viền hồng nóng tinh tế */
+  box-shadow: 0 0 25px rgba(255, 105, 180, 0.4); /* Phát sáng hồng nóng nhẹ */
+}
+body.ThuyTram-profile .profile-content header h1,
+body.ThuyTram-profile .profile-content section h2,
+body.ThuyTram-profile .profile-content ul li::before {
+  color: #ff69b4; /* Hồng nóng */
+}
+body.ThuyTram-profile .profile-content header h1::after {
+  background: linear-gradient(to right, transparent, #ff69b4, transparent);
+}
+body.ThuyTram-profile .profile-content section {
+  border: 1px solid rgba(255, 105, 180, 0.1);
+}
+body.ThuyTram-profile .social-links a {
+  background: linear-gradient(
+    45deg,
+    #9932cc,
+    #da70d6
+  ); /* Gradient từ tím sang hồng */
+  box-shadow: 0 3px 10px rgba(153, 50, 204, 0.3);
+}
+body.ThuyTram-profile .social-links a:hover {
+  background: linear-gradient(
+    45deg,
+    #da70d6,
+    #ff69b4
+  ); /* Đổi sang tông hồng tím sáng hơn khi hover */
+  color: #2a0a3a;
+}
+
+/* Hiệu Hiệu (tiktoker.html) - Nebula Glow (Green & Cyan) */
+body.HieuHieu-profile {
+  background: radial-gradient(
+    ellipse at bottom,
+    #08211c 0%,
+    #020d0a 100%
+  ); /* Nền mặc định */
+  background-image: url("../images/CNhieuhieu.jpg"); /* Thêm background ảnh cho trang cá nhân */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+body.HieuHieu-profile .profile-content {
+  background-color: rgba(8, 33, 28, 0.8);
+  border: 1px solid rgba(0, 255, 255, 0.3); /* Viền cyan tinh tế */
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.4); /* Phát sáng cyan nhẹ */
+}
+body.HieuHieu-profile .profile-content header h1,
+body.HieuHieu-profile .profile-content section h2,
+body.HieuHieu-profile .profile-content ul li::before {
+  color: #00ffff; /* Cyan */
+}
+body.HieuHieu-profile .profile-content header h1::after {
+  background: linear-gradient(to right, transparent, #00ffff, transparent);
+}
+body.HieuHieu-profile .profile-content section {
+  border: 1px solid rgba(0, 255, 255, 0.1);
+}
+body.HieuHieu-profile .social-links a {
+  background: linear-gradient(45deg, #32cd32, #00ff7f);
+  box-shadow: 0 3px 10px rgba(50, 205, 50, 0.3);
+}
+body.HieuHieu-profile .social-links a:hover {
+  background: linear-gradient(45deg, #00ffff, #00ced1);
+  color: #08211c;
+}
+
+/* Responsive for profile deco images */
+@media (max-width: 768px) {
+  .profile-deco-1 {
+    top: 5%;
+    left: 5%;
+    width: 50px;
+    height: 50px;
+  }
+  .profile-deco-2 {
+    top: 18%;
+    right: 5%;
+    width: 70px;
+    height: 70px;
+  }
+  .profile-deco-3 {
+    bottom: 10%;
+    left: 8%;
+    width: 40px;
+    height: 40px;
+  }
+  .profile-deco-4 {
+    bottom: 3%;
+    right: 5%;
+    width: 60px;
+    height: 60px;
+  }
+}
+.container {
+  font-family: big-caslon-fb;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+}
