@@ -16,11 +16,12 @@ body {
 }
 
 nav {
-  background-color: rgba(0, 0, 0, 0); /* Thay đổi thành trong suốt */
+   background-color: rgba(255, 255, 255, 0.126);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100%;
-  padding: 10px 0; /* Giảm padding để thanh menu mỏng hơn */
-  top: 0;
   z-index: 1000;
 }
 
@@ -168,7 +169,7 @@ nav {
 }
 
 .hero-content a {
-  background-color: #4975d4;
+  background-color: #093aa3;
   color: #ffffff;
   padding: 10px 25px;
   text-decoration: none;
